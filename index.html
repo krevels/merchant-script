@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Charity Selection Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <div id="sparo-mount"></div>
+
+    <script src="http://sparo-merchant-script.local:8080/webpack-dev-server.js"></script>
+    <script 
+      data-target="#sparo-mount" 
+      id="SPARO-lib" 
+      data-amount="200" 
+      data-merchant="132839" 
+      data-prompt-text="Would you like to donate 2% of your purchase",
+      data-confirm-text="You have chosen to donate <em>2%</em> of your purchase to <strong>{{charity}}</strong>"
+      src="build/sparo.js">
+    </script>
+  </body>
+</html>
