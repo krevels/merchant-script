@@ -5,19 +5,58 @@ import $ from 'jquery';
 import noty from 'noty';
 import Fancybox from 'fancybox';
 import uuid from 'node-uuid';
-import Cookie from 'js-cookie';
+//import Cookie from 'js-cookie';
 import config from './config';
 
 const fancybox = Fancybox($);
 
 $( () => {
-  const { amount, merchant, target, promptText, confirmText } = $('#SPARO-lib').data();
+  const { amount, merchant, target, promptText, confirmText, action="select" } = $('#SPARO-lib').data();
+
+  // TODO: check action
+  { select: selectCharity,
+    conform: confirmCharity 
+  }[action]();
+
 
   setupFrameMessageListeners();
-  triggerFlyover();
 
-  $('.SPARO_notifier').on('click', openModal)
-  $(document).on('click', '.SPARO_select_new_charity', openModal);
+  function confirmCharity() {
+    // scan for values to submit
+    const { selOrderNum, selOrderAmount, apiKey } = $("#SPARO-lib).data();
+
+    openConfirmationFrame(
+      apiKey,
+      $(selOrderAmount).text(),
+      $(selOrderNum).text()
+    );
+
+  }
+
+  function openConfirmationFrame(apikey, amount, order_num) {
+    if(!apikey || !amount) {
+      return;
+    }
+
+    const qs = `?api_key=${apikey}&amount=${amount}&order_num=${order_num}`;
+
+    const frame = $('<iframe />').attr({ 
+      src: (config.iframe_src + '/confirm' + qs),
+      width: 0,
+      height: 0,
+      frameborder: 0,
+      scrolling: 'no',
+      seamless: 'seamless'
+    });
+
+    $(body).append(frame);
+  }
+
+  function selectCharity() {
+    triggerFlyover();
+    $('.SPARO_notifier').on('click', openModal)
+    $(document).on('click', '.SPARO_select_new_charity', openModal);
+  }
 
 
   function setupFrameMessageListeners() {
@@ -41,14 +80,14 @@ $( () => {
     $(`${target} .SPARO_charity_selection`).remove();
     $(target).append($('<div class="SPARO_charity_selection" />').html(text));
 
-    Cookie.set('sparo_txid', txid);
-    Cookie.set('sparo_charity', charity_id);
+    //Cookie.set('sparo_txid', txid);
+    //Cookie.set('sparo_charity', charity_id);
   }
   
   function removeCharitySelection() {
     $(`${target} .SPARO_charity_selection`).remove();
-    Cookie.remove('sparo_txid');
-    Cookie.remove('sparo_charity');
+    //Cookie.remove('sparo_txid');
+    //Cookie.remove('sparo_charity');
   }
 
   function triggerFlyover() {

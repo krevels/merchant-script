@@ -31,6 +31,7 @@
   "dependencies": {
     "animate.css": "^3.4.0",
     "fancybox": "^3.0.0",
+    "html-loader": "^0.3.0",
     "jquery": "^2.1.4",
     "js-cookie": "^2.0.4",
     "node-uuid": "^1.4.3",
