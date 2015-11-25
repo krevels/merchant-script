@@ -29,7 +29,8 @@ module.exports = {
       { test: /\.css$/, loader: "style!css" },
       { test: /\.(png|gif)$/, loader: "url-loader?limit=100000" },
       { test: /\.jpg$/, loader: "file-loader" },
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel?presets[]=es2015' }
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel?presets[]=es2015' },
+      { test: /\.html$/, loader: "html?interpolate" }
     ]
   }
 };

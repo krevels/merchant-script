@@ -1,0 +1,44 @@
+.sparo-confirmation {
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow:0px 0px 1px 1px #dbdbdb;
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 5em;
+}
+
+.confirmation-header {
+  font-weight: 500;
+  font-size: 18px !important;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  line-height: 1.2em;
+  color: #4d4d4d;
+}
+
+html .confirmation-subheader {
+  font-size: 15px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  line-height: 1.2em;
+  color: #4d4d4d;
+}
+
+.sparo-confirmation .charity-logo img {
+  width:40px;
+}
+
+.confirmation-change {
+  font-size: 13px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  line-height: 1.2em;
+  color: #0092DB;
+  cursor: pointer;
+}
+
+.confirmation-change:hover {
+  text-decoration: underline;
+}
+
+.center {
+  text-align: center;
+}
