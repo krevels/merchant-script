@@ -1,19 +1,23 @@
 <html>
   <head>
-    <title>Charity Selection Test</title>
+    <title>Charity Selection Confirmation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
     <div id="sparo-mount"></div>
-    <a href="/confirm.html">Checkout</a>
+    <h1>Order Number: <span id="order">123</span></h2>
+    <h2>Order Amount: <span id="amount">30.00</span></h2>
 
     <script src="http://sparo-merchant-script.local:8080/webpack-dev-server.js"></script>
     <script 
       data-target="#sparo-mount" 
+      data-api-key="0d3a17f70e4d29e33a40bbcc6611fb5f"
       id="SPARO-lib" 
-      data-amount="200" 
+      data-action="confirm"
       data-merchant="132839" 
+      data-sel-order-num="#order"
+      data-sel-order-amount="#amount"
       src="build/sparo.js">
     </script>
   </body>

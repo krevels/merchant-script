@@ -8,7 +8,7 @@
 }
 .sparo-flyover {
   width: 340px;
-  height: 85px;
+  min-height: 85px;
 }
 
 html .sparo-flyover p {

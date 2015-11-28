@@ -1,3 +1,4 @@
+require('./environment')
 var path = require('path');
 var webpack = require('webpack');
 var entry = (process.env.NODE_ENV == 'production') ?
@@ -16,7 +17,12 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.optimize.UglifyJsPlugin({compress: { warnings: false }, mangle: true, comments: false})
+    new webpack.optimize.UglifyJsPlugin({compress: { warnings: false }, mangle: true, comments: false}),
+    new webpack.DefinePlugin({
+      IFRAME_SRC: JSON.stringify(process.env.IFRAME_SRC),
+      TXAPI_URL: JSON.stringify(process.env.TXAPI_URL)
+    })
+
   ],
   resolveLoader: {
     modulesDirectories: ['node_modules']
