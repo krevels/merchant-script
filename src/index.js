@@ -53,10 +53,15 @@ $( () => {
       return;
     }
 
-    const qs = `?api_key=${encodeURIComponent(apikey)}&amount=${encodeURIComponent(amount)}&order_num=${encodeURIComponent(order_num)}&merchant=${encodeURIComponent(merchant)}`;
+    const qs = $.param({
+      api_key: apikey,
+      amount: amount,
+      order_num: order_num,
+      merchant: merchant
+    });
 
     const frame = $('<iframe />').attr({ 
-      src: (IFRAME_SRC + '/confirm' + qs),
+      src: (IFRAME_SRC + '/confirm?' + qs),
       width: 0,
       height: 0,
       frameborder: 0,
@@ -125,7 +130,7 @@ $( () => {
     $('.sparo-flyover').addClass('animated bounceInRight');
     $('.sparo-flyover .close-flyover').on('click', (e) => {
       e.stopPropagation();
-      $('.sparo-flyover-container').addClass('animated fadeout');
+      $('.sparo-flyover-container').addClass('animated fadeOut');
     });
   }
 
