@@ -11,6 +11,31 @@
   min-height: 85px;
 }
 
+.sparo-flyover.panel {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d8d8d8;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background: #ecfaff;
+  color: #333333;
+}
+
+.sparo-flyover.radius {
+  border-radius: 3px;
+}
+
+.sparo-flyover.panel.callout {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d8d8d8;
+  margin-bottom: 1.25rem;
+  padding: 1em;
+  background: #ecfaff;
+  color: #333333;
+  /*height: 56px;*/
+}
+
 html .sparo-flyover p {
   font-size: 13px;
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -28,7 +53,7 @@ html .sparo-flyover a {
   margin-top: 10px;
 }
 
-html .panel.callout a:not(.button) {
+html .sparo-flyover.panel.callout a:not(.button) {
   color: #0092DB;
 }
 

@@ -8,7 +8,48 @@
   height: 5em;
 }
 
-.confirmation-header {
+div {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.sparo-confirmation.row {
+    margin: 0 auto;
+    max-width: 62.5rem;
+    width: 100%;
+}
+
+.sparo-confirmation.row:before, .sparo-confirmation.row:after {
+    content: " ";
+    display: table;
+}
+
+.sparo-confirmation.row:after {
+    clear: both;
+}
+
+.sparo-confirmation .small-10 {
+  width: 75.33333%;
+  /*width: 83.33333%;*/
+}
+
+.sparo-confirmation .small-2 {
+  width: 16.66667%;
+}
+
+.sparo-confirmation .columns {
+  position: relative;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  float: left;
+}
+
+.sparo-confirmation .columns:last-child {
+    float: right;
+}
+
+.sparo-confirmation .confirmation-header {
   font-weight: 500;
   font-size: 18px !important;
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -16,7 +57,7 @@
   color: #4d4d4d;
 }
 
-html .confirmation-subheader {
+html .sparo-confirmation .confirmation-subheader {
   font-size: 15px;
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   line-height: 1.2em;
@@ -27,7 +68,7 @@ html .confirmation-subheader {
   width:40px;
 }
 
-.confirmation-change {
+.sparo-confirmation .confirmation-change {
   font-size: 13px;
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   line-height: 1.2em;
@@ -35,10 +76,10 @@ html .confirmation-subheader {
   cursor: pointer;
 }
 
-.confirmation-change:hover {
+.sparo-confirmation .confirmation-change:hover {
   text-decoration: underline;
 }
 
-.center {
+.sparo-confirmation .center {
   text-align: center;
 }
