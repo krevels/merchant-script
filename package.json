@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-staples": "NODE_ENV=production webpack -p --output-filename=staples.js"
+    "build-staples": "webpack -p --output-filename=staples.js"
   },
   "repository": {
     "type": "git",

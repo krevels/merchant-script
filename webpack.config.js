@@ -1,7 +1,7 @@
 require('./environment')
 var path = require('path');
 var webpack = require('webpack');
-var entry = (process.env.NODE_ENV == 'production') ?
+var entry = (process.env.NODE_ENV == 'production' || process.env.NODE_ENV == 'staging') ?
   ['./src/index'] : ['webpack-dev-server/client?http://sparo-merchant-script.local:8080', 'webpack/hot/only-dev-server', './src/index'];
 
 var devtool = (process.env.NODE_ENV == 'production') ? 'source-map' : 'eval';
