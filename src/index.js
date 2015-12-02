@@ -61,7 +61,7 @@ $( () => {
     });
 
     const frame = $('<iframe />').attr({ 
-      src: (IFRAME_SRC + '/confirm?' + qs),
+      src: (IFRAME_SRC + '/tx/confirm?' + qs),
       width: 0,
       height: 0,
       frameborder: 0,
