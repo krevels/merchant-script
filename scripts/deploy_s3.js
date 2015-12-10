@@ -40,12 +40,13 @@ function checkExistsAndUpload(upload_data){
         throw err;
       }
     }
-
-    // file found
-    s3.copyObject({ACL: 'private', Bucket: bucket, CopySource: encodeURIComponent(bucket + '/' + output_file), Key: (output_file + Date.now())}, function(err, data) {
-      if(err) throw err;
-      uploadToS3(upload_data);
-    });
+    else {
+      // file found
+      s3.copyObject({ACL: 'private', Bucket: bucket, CopySource: encodeURIComponent(bucket + '/' + output_file), Key: (output_file + Date.now())}, function(err, data) {
+        if(err) throw err;
+        uploadToS3(upload_data);
+      });
+    }
   });
 }
 
