@@ -10,8 +10,8 @@ module.exports = {
   devtool: devtool,
   entry: entry,
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'sparo.js',
+    path: path.join(__dirname, process.env.BUILD_DIR),
+    filename: process.env.OUTPUT_FILE,
     publicPath: '/build/'
   },
   plugins: [
