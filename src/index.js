@@ -3,7 +3,6 @@ import '../node_modules/fancybox/dist/css/jquery.fancybox.css';
 import flyover_html from './html/flyover.html';
 import confirmation_html from './html/confirmation.html';
 import order_confirm_html from './html/order_confirmation.html';
-import './css/foundation.css';
 import './css/styles.css';
 import './css/flyover.css';
 import './css/confirmation.css';
