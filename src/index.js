@@ -75,8 +75,8 @@ $( () => {
   function selectCharity() {
     triggerFlyover(merchant_obj.name, merchant_obj.pct_donation);
     $('.SPARO_notifier').on('click', () => {
+      //$('.sparo-flyover-container').addClass('animated fadeout');
       openModal();
-      $('.sparo-flyover-container').addClass('animated fadeout');
     });
     $(document).on('click', '.sparo-confirmation .confirmation-change', openModal);
   }
@@ -149,6 +149,9 @@ $( () => {
       iframe: {
         scrolling: 'no',
         preload: true
+      },
+      afterLoad: function() {
+        $('.sparo-flyover-container').fadeOut('slow');
       }
     });
   }
