@@ -3,3 +3,7 @@
   background-color: #ffe4b5;
   font-weight: 400;
 }
+
+.fancybox-overlay {
+  z-index: 100000;
+}
