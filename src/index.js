@@ -109,9 +109,9 @@ $( () => {
     }
 
     const text = text_tmpl
-      .replace('%%amount%%', amount)
-      .replace('%%charity_name%%', charity_name)
-      .replace('%%charity_src%%', charity_img);
+      .replace(/%%amount%%/g, amount)
+      .replace(/%%charity_name%%/g, charity_name)
+      .replace(/%%charity_src%%/g, charity_img);
 
     $(`${target} .sparo-confirmation`).remove();
     $(target).append(text);
@@ -147,7 +147,7 @@ $( () => {
       modal: true,
       padding: 10,
       margin: 5,
-      aspectRatio: true,
+      /*aspectRatio: true,*/
       iframe: {
         scrolling: 'no',
         preload: true
