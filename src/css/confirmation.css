@@ -3,7 +3,7 @@
   background-color: white;
   border-radius: 5px;
   box-shadow:0px 0px 1px 1px #dbdbdb;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0px;
   margin-bottom: 10px;
   /* height: 5em; */
 }
@@ -30,7 +30,7 @@ div {
     margin: 0 auto;
     /* max-width: 62.5rem; */
     width: 100%;
-    padding-left: 15px;
+    /*padding-left: 15px;*/
 }
 
 .sparo-confirmation.row:before, .sparo-confirmation.row:after {
