@@ -52,6 +52,8 @@ $( () => {
       return;
     }
 
+    amount = amount.replace(/[^0-9.]/g,'');
+
     const qs = $.param({
       api_key: apikey,
       amount: amount,
@@ -108,6 +110,7 @@ $( () => {
 
     const text = text_tmpl
       .replace('%%amount%%', amount)
+      .replace('%%charity_name%%', charity_name)
       .replace('%%charity_src%%', charity_img);
 
     $(`${target} .sparo-confirmation`).remove();
