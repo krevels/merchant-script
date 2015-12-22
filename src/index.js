@@ -18,7 +18,7 @@ $( () => {
   let merchant_obj;
 
   // TODO: check action
-  const action_map = { select: selectCharity, confirm: confirmCharity };
+  const action_map = { select: checkExistingSelection, confirm: confirmCharity };
 
   $.ajax({
     url: TXAPI_URL + `/api/retailers/${merchant}`,
@@ -33,6 +33,7 @@ $( () => {
     }
   });
 
+  $(document).on('click', '.sparo-confirmation .confirmation-change', openModal);
   setupFrameMessageListeners();
 
   function confirmCharity() {
@@ -73,14 +74,6 @@ $( () => {
     $('body').append(frame);
   }
 
-  function selectCharity() {
-    triggerFlyover(merchant_obj.name, merchant_obj.pct_donation);
-    $('.SPARO_notifier').on('click', () => {
-      //$('.sparo-flyover-container').addClass('animated fadeout');
-      openModal();
-    });
-    $(document).on('click', '.sparo-confirmation .confirmation-change', openModal);
-  }
 
 
   function setupFrameMessageListeners() {
@@ -99,6 +92,13 @@ $( () => {
       else if(message.startsWith('confirm')){
         const [ , charity_name, amount, charity_img ] = message.split('|');
         generateCharitySelection(order_confirm_html, charity_name, amount, charity_img);
+      }
+      else if(message.startsWith('flyover')){
+        triggerFlyover(merchant_obj.name, merchant_obj.pct_donation);
+        $('.SPARO_notifier').on('click', () => {
+          //$('.sparo-flyover-container').addClass('animated fadeout');
+          openModal();
+        });
       }
     });
   }
@@ -156,6 +156,19 @@ $( () => {
         $('.sparo-flyover-container').fadeOut('slow');
       }
     });
+  }
+
+  function checkExistingSelection() {
+    const frame = $('<iframe />').attr({
+      src: `${IFRAME_SRC}/tx/charity_check/${merchant}?amount=${amount}`,
+      width: 0,
+      height: 0,
+      frameborder: 0,
+      scrolling: 'no',
+      seamless: 'seamless'
+    });
+
+    $('body').append(frame);
   }
 });
 
