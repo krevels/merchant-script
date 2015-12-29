@@ -82,18 +82,18 @@ $( () => {
       if(message == 'close'){
         $.fancybox.close();
       }
-      else if(message.startsWith('selected')){
+      else if(/^selected/.test(message)){
         const [ , txid, charity_id, charity_name, amount, charity_img ] = message.split('|');
         (charity_id) ?
           generateCharitySelection(confirmation_html, charity_name, amount, charity_img) : 
           removeCharitySelection();
           $.fancybox.close();
       }
-      else if(message.startsWith('confirm')){
+      else if(/^confirm/.test(message)){
         const [ , charity_name, amount, charity_img ] = message.split('|');
         generateCharitySelection(order_confirm_html, charity_name, amount, charity_img);
       }
-      else if(message.startsWith('flyover')){
+      else if(/^flyover/.test(message)){
         triggerFlyover(merchant_obj.name, merchant_obj.pct_donation);
         $('.SPARO_notifier').on('click', () => {
           //$('.sparo-flyover-container').addClass('animated fadeout');
