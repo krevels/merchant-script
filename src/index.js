@@ -108,6 +108,11 @@ $( () => {
       return;
     }
 
+    // append an extra percent if present
+    if(/^\$/.test(amount)){
+      amount = `$${amount}`;
+    }
+
     const text = text_tmpl
       .replace(/%%amount%%/g, amount)
       .replace(/%%charity_name%%/g, charity_name)
