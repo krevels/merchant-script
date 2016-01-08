@@ -33,7 +33,7 @@
   border-width: 1px;
   border-color: #d8d8d8;
   margin-bottom: 1.25rem;
-  padding: 0px 1em 1em 1em;
+  padding: 1em;
   background: #4D4D4D;
   color: #fff;
   font-family: "Helvetica Neue", "HelveticaNeue-Thin", "Helvetica", "Arial", sans-serif;
@@ -66,7 +66,6 @@ html .close-flyover {
   font-size: 35px;
   margin-top: 5px;
   margin-right: 5px;
-  line-height: 1.2em;
   width: 12px;
   float: right;
   cursor: pointer;
