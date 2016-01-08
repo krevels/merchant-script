@@ -8,8 +8,9 @@
   z-index: 10;
 }
 .sparo-flyover {
-  width: 340px;
-  min-height: 85px;
+  width: 300px;
+  min-height: 120px;
+  overflow: auto;
 }
 
 .sparo-flyover.panel {
@@ -20,6 +21,7 @@
   padding: 1.25rem;
   background: #ecfaff;
   color: #333333;
+  opacity: 0.95;
 }
 
 .sparo-flyover.radius {
@@ -31,36 +33,41 @@
   border-width: 1px;
   border-color: #d8d8d8;
   margin-bottom: 1.25rem;
-  padding: 1em;
-  background: #ecfaff;
-  color: #333333;
+  padding: 0px 1em 1em 1em;
+  background: #4D4D4D;
+  color: #fff;
+  font-family: "Helvetica Neue", "HelveticaNeue-Thin", "Helvetica", "Arial", sans-serif;
+  line-height: 1.2em;
   /*height: 56px;*/
 }
 
 html .sparo-flyover p {
-  font-size: 13px;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  line-height: 1.2em;
-  color: #4d4d4d;
 }
 
 html .sparo-flyover a {
+  color: #fff;
   font-size: 13px;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   line-height: 1.2em;
-  color: #0092DB;
-  hover: underline;
-  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  border: 1px solid #fff;
   margin-top: 10px;
+  padding: 5px 15px 5px 15px;
 }
 
-html .sparo-flyover.panel.callout a:not(.button) {
-  color: #0092DB;
+div .sparo-flyover-message {
+  float: left;
+  font-size: 16px;
+  width: 80%;
 }
 
 html .close-flyover {
+  font-size: 35px;
+  margin-top: 5px;
+  margin-right: 5px;
+  line-height: 1.2em;
   width: 12px;
-  position: relative;
   float: right;
   cursor: pointer;
 }
