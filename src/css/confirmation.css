@@ -71,6 +71,14 @@ div {
   margin-top: 5px;
 }
 
+.sparo-confirmation .order-confirmation-header {
+  font-weight: bold;
+  font-family: "HelveticaNeue-Thin", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  line-height: 1.2em;
+  color: #4d4d4d;
+  margin-top: 5px;
+}
+
 html .sparo-confirmation .confirmation-subheader {
   font-size: 14px;
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
