@@ -9,7 +9,7 @@
 }
 .sparo-flyover {
   width: 300px;
-  min-height: 120px;
+  min-height: 92px;
   overflow: auto;
 }
 
@@ -64,7 +64,7 @@ div .sparo-flyover-message {
 
 html .close-flyover {
   font-size: 35px;
-  margin-top: 5px;
+  margin-top: -10px;
   margin-right: 5px;
   width: 12px;
   float: right;
