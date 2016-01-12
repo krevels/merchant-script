@@ -19,9 +19,6 @@
   padding-bottom: 5px;
 }
 
-.sparo-confirmation-notify > div {
-  padding-left: inherit;
-}
 
 
 div {
@@ -111,4 +108,8 @@ html .sparo-confirmation .confirmation-subheader {
 
 .sparo-confirmation .center {
   text-align: center;
+}
+
+.sparo-confirmation-notify > div.columns {
+  padding-left: inherit;
 }
