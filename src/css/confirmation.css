@@ -19,6 +19,10 @@
   padding-bottom: 5px;
 }
 
+.sparo-confirmation-notify > div {
+  padding-left: inherit;
+}
+
 
 div {
   margin: 0;
@@ -69,6 +73,7 @@ div {
   line-height: 1.2em;
   color: #4d4d4d;
   margin-top: 5px;
+  text-transform: none;
 }
 
 .sparo-confirmation .order-confirmation-header {
@@ -77,6 +82,8 @@ div {
   line-height: 1.2em;
   color: #4d4d4d;
   margin-top: 5px;
+  margin-bottom: 7px;
+  text-transform: none;
 }
 
 html .sparo-confirmation .confirmation-subheader {
@@ -92,7 +99,7 @@ html .sparo-confirmation .confirmation-subheader {
 
 .sparo-confirmation .confirmation-change {
   font-size: 13px;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Arial", sans-serif;
   line-height: 1.2em;
   color: #0092DB;
   cursor: pointer;

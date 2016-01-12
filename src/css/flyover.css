@@ -33,7 +33,7 @@
   border-width: 1px;
   border-color: #d8d8d8;
   margin-bottom: 1.25rem;
-  padding: 1em;
+  padding: 1em 1em 0 1em;
   background: #4D4D4D;
   color: #fff;
   font-family: "Helvetica Neue", "HelveticaNeue-Thin", "Helvetica", "Arial", sans-serif;
@@ -42,6 +42,11 @@
 }
 
 html .sparo-flyover p {
+}
+
+html .sparo-flyover a:hover {
+  color: #0092db;
+  background-color: #fff;
 }
 
 html .sparo-flyover a {
@@ -54,6 +59,7 @@ html .sparo-flyover a {
   border: 1px solid #fff;
   margin-top: 10px;
   padding: 5px 15px 5px 15px;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 div .sparo-flyover-message {
