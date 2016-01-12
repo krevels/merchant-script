@@ -15,13 +15,14 @@ const fancybox = Fancybox($);
 
 $( () => {
   const { amount, merchant, target, promptText, confirmText, action="select" } = $('#SPARO-lib').data();
+  let scroll_to_notification = false;
   let merchant_obj;
 
   // TODO: check action
   const action_map = { select: checkExistingSelection, confirm: confirmCharity };
 
   $.ajax({
-    url: TXAPI_URL + `/api/retailers/${merchant}`,
+    url: `${TXAPI_URL}/api/retailers/${merchant}`,
     dataType: 'jsonp',
     success: function(data) {
       if(typeof data.id == 'undefined'){
@@ -49,6 +50,7 @@ $( () => {
   }
 
   function openConfirmationFrame(apikey, amount, order_num) {
+
     if(!apikey || !amount) {
       return;
     }
@@ -120,6 +122,10 @@ $( () => {
 
     $(`${target} .sparo-confirmation`).remove();
     $(target).append(text);
+
+    if(scroll_to_notification) {
+      $('html,body').animate({scrollTop: $('#SPARO_confirmation').offset().top}, 1000);
+    }
   }
 
 
@@ -158,6 +164,7 @@ $( () => {
         preload: true
       },
       afterLoad: function() {
+        scroll_to_notification = true;
         $('.sparo-flyover-container').fadeOut('slow');
       }
     });
