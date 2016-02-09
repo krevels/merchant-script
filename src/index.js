@@ -161,7 +161,7 @@ $( () => {
       /*aspectRatio: true,*/
       iframe: {
         scrolling: 'no',
-        preload: true
+        preload: false
       },
       afterLoad: function() {
         scroll_to_notification = true;
